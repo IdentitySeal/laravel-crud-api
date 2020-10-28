@@ -30,7 +30,7 @@ class ApiController extends Controller
     public function getStudent($id){
         // get student data by Id
         if (Student::where('ids', $id)->exists()){
-            $student = Student::where('id',$id)->get()->toJson(JSON_PRETTY_PRINT);
+            $student = Student::where('ids',$id)->get()->toJson(JSON_PRETTY_PRINT);
             return response ($student,200);
         }
         else {
